@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+
+        <style>
+            .logo {
+                top: 10px;
+                left: 51%;
+                background: url('img/rj.svg') no-repeat;
+                background-size: contain;
+                text-indent: -9999em;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+            }
+            .logo-wrapper {
+                width: 100vw;
+                height: 50px;
+                background-color: white;
+                position: fixed;
+                top: 0;
+                z-index: 2000;
+                box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+            }
+            .logo-wrapper::before {
+                content: url('img/logo_point.svg');
+                top: 0px;
+                height: 50px;
+                width: 100vw;
+                position: absolute;
+            }
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                font-family: 'Arial Black', cursive;
+            }
+            .block {
+                width: 100vw;
+                height: 85vh;
+                position: relative;
+                overflow: hidden;
+                font-size: 16px;
+            }
+            .block1 {
+                clip-path: polygon(0 0, 100% 0%, 100% 96%, 0% 100%);
+            }
+            .block2 {
+                clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0 98%);
+            }
+            .block3 {
+                clip-path: polygon(0 0, 100% 3%, 100% 98%, 0 100%);
+            }
+
+            .stripe-container {
+                width: 100vw;
+                height: 0vh;
+                position: relative;
+                overflow: visible;
+                z-index: 1000;
+            }
+            .one-deg {
+                transform: rotate(1deg);
+            }
+            .neg-one-deg {
+                transform: rotate(-1deg);
+            }
+            .stripe {
+                position: relative;
+                width: 100vw;
+                height: 50px;
+                background-color: #ff7800;
+            }
+            .stripe1 {
+                top: -20px;
+            }
+            .stripe2 {
+                height: 70px;
+                top: -150px;
+            }
+            .stripe3 {
+                height: 10px;
+                top: 10px;
+            }
+
+            .img-parallax {
+                width: 100vw;
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                pointer-events: none;
+            }
+            .block h2 {
+                position: relative;
+                top: 25%;
+                z-index: 1000;
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+                font-size: 10vw;
+                color: white;
+                line-height: 1;
+                text-align: center;
+                text-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            p,
+            h1 {
+                width: 50%;
+                margin: auto auto;
+            }
+
+            .break {
+                height: 200px;
+            }
+            #wrapper {
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="logo-wrapper">
+            <a class="logo">Rick Janusz</a>
+        </div>
+        <div id="wrapper">
+            <div class="block block1">
+                <h2>Parallax Speed -1</h2>
+                <img
+                    src="https://unsplash.it/1920/1920/?image=1005"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+            </div>
+            <div class="stripe-container neg-one-deg">
+                <div class="stripe stripe1"></div>
+                <div class="stripe stripe2"></div>
+                <div class="stripe stripe3"></div>
+                <div class="stripe stripe4"></div>
+                <div class="stripe stripe5"></div>
+            </div>
+            <div class="block block2">
+                <img
+                    src="https://unsplash.it/1920/1920/?image=1067"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+                <h2>Parallax Speed 1</h2>
+            </div>
+            <div class="break"></div>
+            <div class="block block3">
+                <div class="img-parallax" data-speed="1">
+                    <h1>Why do we use it?</h1>
+
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using 'Content here, content
+                        here', making it look like readable English. Many
+                        desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search
+                        for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the
+                        years, sometimes by accident, sometimes on purpose
+                        (injected humour and the like).
+                    </p>
+                </div>
+            </div>
+            <div class="block block2">
+                <img
+                    src="https://unsplash.it/1920/1920/?gravity=center"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+                <h2>Parallax Speed -0.25</h2>
+            </div>
+            <div class="block block1">
+                <img
+                    src="https://unsplash.it/1920/1920/?bokeh"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+                <h2>Bokeh</h2>
+            </div>
+            <div class="break"></div>
+            <div class="block block3">
+                <img
+                    src="https://unsplash.it/1920/1920/?tools"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+                <h2>Parallax Speed -0.75</h2>
+            </div>
+            <div class="break"></div>
+            <div class="block block2">
+                <img
+                    src="https://unsplash.it/1920/1920/?blur-background"
+                    data-speed="1"
+                    class="img-parallax"
+                />
+                <h2>Parallax Speed 0.75</h2>
+            </div>
+        </div>
+        <script>
+            var imgs = document.querySelectorAll('.img-parallax')
+
+            imgs.forEach(function (img, i) {
+                var imgParent = img.parentNode
+
+                function parallaxImg(callback) {
+                    var speed = img.getAttribute('data-speed')
+                    var imgY = imgParent.offsetTop
+                    var winY = window.scrollY
+                    var winH = img.offsetHeight
+                    var parentH = imgParent.clientHeight
+                    var winBottom = winY + winH
+
+                    // If block is shown on screen
+                    if (winBottom > imgY && winY < imgY + parentH) {
+                        // Number of pixels shown after block appear
+                        var imgBottom = (winBottom - imgY) * speed
+                        // Max number of pixels until block disappear
+                        var imgTop = winH + parentH
+                        // Percentage between start showing until disappearing
+                        var imgPercent =
+                            (imgBottom / imgTop) * 100 + (50 - speed * 50)
+                    }
+
+                    img.style.top = imgPercent + '%'
+                    img.style.transform =
+                        'translate(-50%, -' + imgPercent + '%)'
+                    callback()
+                }
+                var wrapper = document.querySelector('#wrapper')
+                window.addEventListener('scroll', function () {
+                    parallaxImg()
+                })
+                window.addEventListener('load', function () {
+                    parallaxImg(function () {
+                        wrapper.style.opacity = 1
+                    })
+                })
+            })
+        </script>
+    </body>
+</html>
